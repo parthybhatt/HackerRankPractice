@@ -6,10 +6,6 @@
 // static functions declaration
 static int get_number_of_distinct_chacters(const char* a);
 
-/*
-Compares the ascii value of char pointed by a and b
-if a is greater(a needs to be later in the array), function returns 1 else returns 0
-*/
 int lexicographic_sort(const char* a, const char* b)
 {
     return strcmp(a,b);
@@ -27,6 +23,10 @@ int sort_by_number_of_distinct_characters(const char* a, const char* b)
     {
         return 1;
     }
+    else if(get_number_of_distinct_chacters(a) == get_number_of_distinct_chacters(b))
+    {
+        return strcmp(a,b);
+    }
     else
     {
         return 0;
@@ -38,6 +38,10 @@ int sort_by_length(const char* a, const char* b)
     if(strlen(a) > strlen(b))
     {
         return 1;
+    }
+    else if(strlen(a) == strlen(b))
+    {
+        return strcmp(a,b);
     }
     else
     {
